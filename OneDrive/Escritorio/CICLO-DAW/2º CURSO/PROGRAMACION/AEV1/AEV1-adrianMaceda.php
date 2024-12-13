@@ -130,7 +130,8 @@ $impacts = [
 ];
 //Ejercicio1, impresion del mapa original
 echo ">> *** MAPA ORIGINAL *** << <br>";
-function printMap(array $pomodoroHaters):void {
+function printMap(array $pomodoroHaters): void
+{
     foreach ($pomodoroHaters as $line) {
         foreach ($line as $column) {
             if ($column === '~') {
@@ -152,7 +153,8 @@ echo "<br>";
 
 
 //Ejercicio2 mostrando cambios en impactos urbanos mediante el uso de una funcion
-function impactsApply(array $map, $impactsC): array {
+function impactsApply(array $map, $impactsC): array
+{
     foreach ($impactsC as $coordinates) {
         $x = $coordinates[0];
         $y = $coordinates[1];
@@ -171,7 +173,8 @@ printMap($mapModify);
 echo "<br>";
 
 //Ejercicio 3, calculo del colirio y personas afectadas
-function coliriumNeeded(array $map): int { // llamamos a $map generado en el punto anterior 
+function coliriumNeeded(array $map): int
+{ // llamamos a $map generado en el punto anterior 
     $urban = 0;
     $population = 5000; // Población por km cuadrado
     $needColirium = 0.025;
@@ -196,7 +199,8 @@ $personasAfectadas = coliriumNeeded(map: $mapModify);
 
 //Ejercicio 4, agentes de seguros y cambio de elementos en el mapa
 echo "<br>";
-function extraChanges(array $map, $impactos): array {
+function extraChanges(array $map, $impactos): array
+{
     foreach ($impactos as $impacto) {
         $x = $impacto[0];
         $y = $impacto[1];
@@ -271,12 +275,13 @@ function seaRed(array $mapaFinal): int
     }
     return $seaWsauce;
 }
-function calculateProfit(array $pomodoroHaters, array $mapaFinal, $cod)
+//Ejercicio 7 , calculo del beneficio
+function calculateProfit(array $pomodoroHaters, array $mapaFinal, $cod): array
 {
     $sea = seaSquares($pomodoroHaters);
     $sellingPrice = 5;
     $seaWsauce = seaRed($mapaFinal);
-    $availableCod = intval(($cod / $sea) * $seaWsauce);
+    $availableCod = intval(value: ($cod / $sea) * $seaWsauce);
     $profit = intval($availableCod * $sellingPrice);
     return [
         'availableCod' => $availableCod,
