@@ -166,7 +166,7 @@ function impactsApply(array $map, $impactsC): array {
 
 $mapModify = impactsApply($pomodoroHaters, $impacts);
 
-echo ">> *** MAPA ORIGINAL CON IMPACTOS URBANOS *** << <br>";
+echo ">> *** MAPA CON IMPACTOS URBANOS *** << <br>";
 printMap($mapModify);
 echo "<br>";
 
